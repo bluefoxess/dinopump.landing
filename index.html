@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DINOPUMP 🚀 | $DINO</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #4aff00;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px #ff4d00;
+    }
+
+    p {
+      font-size: 1em;
+      margin: 15px 0;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 20px 40px;
+      margin: 15px;
+      background: #ff4d00;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      border-radius: 15px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #ff4d00;
+    }
+
+    .button:hover {
+      background: #ff751a;
+      box-shadow: 0 0 25px #ff751a;
+    }
+
+    #countdown {
+      font-size: 2em;
+      margin: 30px 0;
+      color: #00ffff;
+      text-shadow: 1px 1px #ff4d00;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.8em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>DINOPUMP 🚀</h1>
+  <p>¡Prepárate para el lanzamiento de <strong>$DINO</strong>!</p>
+  <p>Nos mantendremos avisando por el canal de Telegram y por X</p>
+
+  <div id="countdown">Cargando contador...</div>
+
+  <a href="https://t.me/+F_LzFKfKh4xjMjg5" class="button" target="_blank">Unirse al Grupo de Telegram</a>
+
+  <footer>
+    © 2025 DINOPUMP | $DINO - Todos los derechos reservados
+  </footer>
+
+  <script>
+    // Fecha de lanzamiento (Ajusta la fecha y hora)
+    const launchDate = new Date("June 10, 2025 12:00:00").getTime();
+
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "¡LANZADO! 🚀";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
